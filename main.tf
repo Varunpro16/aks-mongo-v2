@@ -119,7 +119,7 @@ resource "azurerm_private_dns_zone_virtual_network_link" "dns_vnet_link" {
 
 # Private DNS A Record for Cosmos DB
 data "azurerm_network_interface" "private_endpoint_nic" {
-  name                = "cosmosdb-private-endpoint.nic.761c9ae9-ddc9-4416-8bb3-6273470c12ca"
+  name                = azurerm_private_endpoint.private_endpoint.private_service_connection.name
   resource_group_name = data.azurerm_resource_group.rg.name
 }
 
